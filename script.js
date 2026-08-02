@@ -52,7 +52,19 @@ tracks.forEach((track,index)=>{
 
     div.id="track"+index;
 
-    div.innerHTML=`${index+1}. ${track}`;
+    div.innerHTML = `
+<div class="track-row">
+
+    <span class="track-number">
+        ${String(index + 1).padStart(2,"0")}
+    </span>
+
+    <span class="track-name">
+        ${track}
+    </span>
+
+</div>
+`;
 
     div.onclick=()=>{
 
