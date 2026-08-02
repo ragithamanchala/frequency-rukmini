@@ -37,7 +37,13 @@ function loadTrack(index){
 
     audio.src = `audio/${String(index + 1).padStart(2,'0')}.mp3`;
 
-    trackTitle.textContent = tracks[index];
+    trackTitle.innerHTML = `
+<div style="font-size:13px;color:#888;letter-spacing:2px;margin-bottom:8px;">
+NOW PLAYING
+</div>
+
+${tracks[index]}
+`;
 
     document.querySelectorAll(".track").forEach(t=>t.classList.remove("active"));
 
