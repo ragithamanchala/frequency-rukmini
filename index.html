@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Frequency: Rukmini</title>
+    <title>Echo Chambers</title>
 
     <link rel="stylesheet" href="style.css">
 
@@ -14,104 +14,65 @@
 
 <body>
 
-<div id="welcome">
+    <div id="welcome">
 
-    <h3>frequency:</h3>
+        <h1>Echo Chambers</h1>
 
-    <h1>rukmini</h1>
+        <p class="artist">by Ragitha</p>
 
-    <p>
-        For my Bear.
-        <br><br>
-        Whenever you need me,
-        <br>
-        I'll always be one play away.
-    </p>
+        <img id="cover" src="images/cover.jpeg" alt="Album Cover">
 
-    <button id="enterBtn">
-        Press Play
-    </button>
+        <div class="message">
+            <p><strong>Home isn't a place.</strong></p>
 
-</div>
+            <p>
+                For the days you miss me,<br>
+                the days you don't,<br>
+                and every day in between.
+            </p>
 
+            <p>🤍</p>
 
+            <p><strong>Emergency Best Friend Kit.</strong><br>
+            Use whenever required.</p>
+        </div>
 
-<div id="player" class="hidden">
-
-    <img id="cover" src="images/cover.jpg">
-
-    <h2>Frequency: Rukmini</h2>
-
-    <p class="artist">
-        by Ragitha
-    </p>
-
-
-
-    <audio id="audioPlayer"></audio>
-
-
-
-    <div class="nowPlaying">
-
-        <h3 id="trackTitle">
-            Helloooo
-        </h3>
+        <button id="enterBtn">▶ Press Play</button>
 
     </div>
 
 
 
-    <input
-        type="range"
-        id="progress"
-        value="0"
-        min="0"
-        max="100">
+    <div id="player" class="hidden">
 
+        <h2>Echo Chambers</h2>
 
+        <p class="artist">by Ragitha</p>
 
-    <div class="time">
+        <img id="coverPlayer" src="images/cover.jpeg" alt="Album Cover">
 
-        <span id="currentTime">
-            0:00
-        </span>
+        <h3 id="trackTitle">Helloooo</h3>
 
-        <span id="duration">
-            0:00
-        </span>
+        <audio id="audioPlayer"></audio>
 
-    </div>
+        <input type="range" id="progress" value="0" min="0" max="100">
 
+        <div class="time">
+            <span id="currentTime">0:00</span>
+            <span id="duration">0:00</span>
+        </div>
 
+        <div class="controls">
+            <button id="prev">⏮</button>
+            <button id="play">▶</button>
+            <button id="next">⏭</button>
+        </div>
 
-    <div class="controls">
-
-        <button id="prev">
-            ⏮
-        </button>
-
-        <button id="play">
-            ▶
-        </button>
-
-        <button id="next">
-            ⏭
-        </button>
+        <div id="playlist"></div>
 
     </div>
 
-
-
-    <div id="playlist">
-
-    </div>
-
-</div>
-
-
-
-<script src="script.js"></script>
+    <script src="script.js"></script>
 
 </body>
 </html>
