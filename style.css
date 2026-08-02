@@ -206,6 +206,30 @@ body {
     font-weight: 600;
 }
 
+.track-row{
+    display:flex;
+    align-items:center;
+    gap:18px;
+}
+
+.track-number{
+
+    width:30px;
+
+    color:#a39b95;
+
+    font-size:14px;
+
+}
+
+.track-name{
+
+    flex:1;
+
+    font-size:15px;
+
+}
+
 #playlist::-webkit-scrollbar {
     width: 6px;
 }
