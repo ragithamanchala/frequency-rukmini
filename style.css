@@ -6,7 +6,7 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    background: linear-gradient(135deg, #fdf8f3, #f4e6dd);
+    background: linear-gradient(135deg,#fff8f3,#f7ebe3,#f3ddd4);
     color: #3d3d3d;
     min-height: 100vh;
     display: flex;
@@ -123,6 +123,7 @@ body {
     padding: 30px;
     box-shadow: 0 20px 50px rgba(0,0,0,.08);
     animation: fadeUp .8s ease;
+    border:1px solid rgba(255,255,255,.4);
 }
 
 #player h2 {
@@ -200,10 +201,12 @@ body {
     background: #f1e4dd;
 }
 
-.track.active {
-    background: #ead8cf;
-    color: #7a4e42;
-    font-weight: 600;
+.track.active{
+
+    background:#ead8cf;
+    border-left:5px solid #c98d7b;
+    font-weight:600;
+    color:#7a4e42;
 }
 
 .track-row{
@@ -237,6 +240,21 @@ body {
 #playlist::-webkit-scrollbar-thumb {
     background: #d7b5a8;
     border-radius: 10px;
+}
+.subtitle{
+
+    text-align:center;
+
+    color:#9d928c;
+
+    margin-top:-5px;
+
+    margin-bottom:20px;
+
+    font-size:14px;
+
+    line-height:1.6;
+
 }
 
 /* ---------------- ANIMATIONS ---------------- */
