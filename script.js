@@ -1,76 +1,168 @@
+// ==========================
+// Echo Chambers Player
+// ==========================
+
 const tracks = [
-    "Helloooo",
-    "The Sky Has More Than One Color",
-    "Borrow My Eyes",
-    "After The Rain",
-    "Hold My Earrings",
-    "Get Out Of Your Head",
-    "Distance Is Weird",
-    "Certified Delulu",
-    "The Onion",
-    "Award",
-    "HBD, Bear",
-    "See You At 70",
-    "Still On Our List",
-    "User Manual",
-    "Byeeee",
-    "Hidden Track"
+    {
+        title: "Helloooo",
+        file: "01.mp3"
+    },
+    {
+        title: "The Sky Has More Than One Color",
+        file: "02.mp3"
+    },
+    {
+        title: "Borrow My Eyes",
+        file: "03.mp3"
+    },
+    {
+        title: "After The Rain",
+        file: "04.mp3"
+    },
+    {
+        title: "Hold My Earrings",
+        file: "05.mp3"
+    },
+    {
+        title: "Get Out Of Your Head",
+        file: "06.mp3"
+    },
+    {
+        title: "Distance Is Weird",
+        file: "07.mp3"
+    },
+    {
+        title: "Certified Delulu",
+        file: "08.mp3"
+    },
+    {
+        title: "The Onion",
+        file: "09.mp3"
+    },
+    {
+        title: "Award",
+        file: "10.mp3"
+    },
+    {
+        title: "HBD, Bear",
+        file: "11.mp3"
+    },
+    {
+        title: "See You At 70",
+        file: "12.mp3"
+    },
+    {
+        title: "Still On Our List",
+        file: "13.mp3"
+    },
+    {
+        title: "User Manual",
+        file: "14.mp3"
+    },
+    {
+        title: "Byeeee",
+        file: "15.mp3"
+    },
+    {
+        title: "Hidden Track",
+        file: "16.mp3"
+    }
 ];
 
+const welcome = document.getElementById("welcome");
+const player = document.getElementById("player");
+const endingScreen = document.getElementById("endingScreen");
+
+const enterBtn = document.getElementById("enterBtn");
+
 const audio = document.getElementById("audioPlayer");
+
 const playBtn = document.getElementById("play");
 const nextBtn = document.getElementById("next");
 const prevBtn = document.getElementById("prev");
+
 const progress = document.getElementById("progress");
+
 const currentTime = document.getElementById("currentTime");
 const duration = document.getElementById("duration");
+
 const trackTitle = document.getElementById("trackTitle");
+
 const playlist = document.getElementById("playlist");
-const welcome = document.getElementById("welcome");
-const player = document.getElementById("player");
-const enterBtn = document.getElementById("enterBtn");
 
 let currentTrack = 0;
+
 let playing = false;
+
+function formatTime(seconds){
+
+    if(isNaN(seconds)) return "00:00";
+
+    const mins = Math.floor(seconds / 60);
+
+    const secs = Math.floor(seconds % 60);
+
+    return String(mins).padStart(2,"0") + ":" + String(secs).padStart(2,"0");
+
+}
 
 function loadTrack(index){
 
-    audio.src = `audio/${String(index + 1).padStart(2,'0')}.mp3`;
+    audio.src = "audio/" + tracks[index].file;
 
     trackTitle.innerHTML = `
-<div style="font-size:13px;color:#888;letter-spacing:2px;margin-bottom:8px;">
-NOW PLAYING
-</div>
+    <div style="font-size:12px;letter-spacing:2px;color:#999;margin-bottom:8px;">
+    NOW PLAYING
+    </div>
 
-${tracks[index]}
-`;
+    ${tracks[index].title}
+    `;
 
-    document.querySelectorAll(".track").forEach(t=>t.classList.remove("active"));
+    document.querySelectorAll(".track").forEach(track=>{
 
-    document.getElementById("track"+index).classList.add("active");
+        track.classList.remove("active");
+
+    });
+
+    const active = document.getElementById("track"+index);
+
+    if(active){
+
+        active.classList.add("active");
+
+    }
+
 }
 
 tracks.forEach((track,index)=>{
 
-    const div=document.createElement("div");
+    if(index===15) return;
+
+    const div = document.createElement("div");
 
     div.className="track";
 
     div.id="track"+index;
 
-    div.innerHTML = `
-<div class="track-row">
+    div.innerHTML=`
 
-    <span class="track-number">
-        ${String(index + 1).padStart(2,"0")}
-    </span>
+    <div class="track-row">
 
-    <span class="track-name">
-        ${track}
-    </span>
+        <span class="track-number">
 
-</div>
-`;
+            ${String(index+1).padStart(2,"0")}
+
+        </span>
+
+        <span class="track-name">
+
+            ${track.title}
+
+        </span>
+
+    </div>
+
+    `;
 
     div.onclick=()=>{
 
@@ -80,7 +172,7 @@ tracks.forEach((track,index)=>{
 
         audio.play();
 
-        playBtn.innerHTML="⏸";
+        playBtn.textContent="⏸";
 
         playing=true;
 
@@ -89,8 +181,7 @@ tracks.forEach((track,index)=>{
     playlist.appendChild(div);
 
 });
-
-enterBtn.onclick=()=>{
+enterBtn.onclick = () => {
 
     welcome.classList.add("hidden");
 
@@ -100,39 +191,39 @@ enterBtn.onclick=()=>{
 
     audio.play();
 
-    playBtn.innerHTML="⏸";
+    playBtn.textContent = "⏸";
 
-    playing=true;
+    playing = true;
 
 };
 
-playBtn.onclick=()=>{
+playBtn.onclick = () => {
 
     if(playing){
 
         audio.pause();
 
-        playBtn.innerHTML="▶";
+        playBtn.textContent = "▶";
 
     }else{
 
         audio.play();
 
-        playBtn.innerHTML="⏸";
+        playBtn.textContent = "⏸";
 
     }
 
-    playing=!playing;
+    playing = !playing;
 
 };
 
-nextBtn.onclick=()=>{
+nextBtn.onclick = () => {
 
     currentTrack++;
 
-    if(currentTrack>=tracks.length){
+    if(currentTrack >= tracks.length){
 
-        currentTrack=0;
+        currentTrack = 0;
 
     }
 
@@ -140,19 +231,19 @@ nextBtn.onclick=()=>{
 
     audio.play();
 
-    playBtn.innerHTML="⏸";
+    playBtn.textContent = "⏸";
 
-    playing=true;
+    playing = true;
 
 };
 
-prevBtn.onclick=()=>{
+prevBtn.onclick = () => {
 
     currentTrack--;
 
-    if(currentTrack<0){
+    if(currentTrack < 0){
 
-        currentTrack=tracks.length-1;
+        currentTrack = tracks.length - 1;
 
     }
 
@@ -160,58 +251,155 @@ prevBtn.onclick=()=>{
 
     audio.play();
 
-    playBtn.innerHTML="⏸";
+    playBtn.textContent = "⏸";
 
-    playing=true;
+    playing = true;
 
 };
 
-audio.addEventListener("ended",()=>{
+audio.addEventListener("loadedmetadata",()=>{
 
-    currentTrack++;
-
-    if(currentTrack<tracks.length){
-
-        loadTrack(currentTrack);
-
-        audio.play();
-
-    }else{
-
-        playBtn.innerHTML="▶";
-
-        playing=false;
-
-    }
+    duration.textContent = formatTime(audio.duration);
 
 });
 
 audio.addEventListener("timeupdate",()=>{
 
-    progress.value=(audio.currentTime/audio.duration)*100||0;
+    currentTime.textContent = formatTime(audio.currentTime);
 
-    currentTime.textContent=format(audio.currentTime);
+    duration.textContent = formatTime(audio.duration);
 
-    duration.textContent=format(audio.duration);
+    progress.value = (audio.currentTime / audio.duration) * 100 || 0;
 
 });
 
 progress.addEventListener("input",()=>{
 
-    audio.currentTime=(progress.value/100)*audio.duration;
+    audio.currentTime = (progress.value / 100) * audio.duration;
+
+});
+audio.addEventListener("ended", () => {
+
+    // Special ending after Track 15
+    if(currentTrack === 14){
+
+        player.classList.add("hidden");
+
+        endingScreen.classList.remove("hidden");
+
+        setTimeout(() => {
+
+            endingScreen.classList.add("hidden");
+
+            player.classList.remove("hidden");
+
+            currentTrack = 15;
+
+            loadTrack(currentTrack);
+
+            audio.play();
+
+            playBtn.textContent = "⏸";
+
+            playing = true;
+
+        }, 4000);
+
+        return;
+
+    }
+
+    currentTrack++;
+
+    if(currentTrack < tracks.length){
+
+        loadTrack(currentTrack);
+
+        audio.play();
+
+        playBtn.textContent = "⏸";
+
+        playing = true;
+
+    }else{
+
+        playBtn.textContent = "▶";
+
+        playing = false;
+
+    }
 
 });
 
-function format(time){
+// Highlight current track when a song starts
+audio.addEventListener("play", () => {
 
-    if(isNaN(time)) return "0:00";
+    document.querySelectorAll(".track").forEach(track => {
 
-    let min=Math.floor(time/60);
+        track.classList.remove("active");
 
-    let sec=Math.floor(time%60);
+    });
 
-    if(sec<10) sec="0"+sec;
+    const active = document.getElementById("track" + currentTrack);
 
-    return `${min}:${sec}`;
+    if(active){
 
-}
+        active.classList.add("active");
+
+    }
+
+});
+
+// Reset play button when paused
+audio.addEventListener("pause", () => {
+
+    if(audio.ended) return;
+
+    playBtn.textContent = "▶";
+
+    playing = false;
+
+});
+
+// Update play button when resumed
+audio.addEventListener("playing", () => {
+
+    playBtn.textContent = "⏸";
+
+    playing = true;
+
+});
+
+// Keyboard shortcuts
+document.addEventListener("keydown", (e) => {
+
+    if(e.code === "Space"){
+
+        e.preventDefault();
+
+        playBtn.click();
+
+    }
+
+    if(e.code === "ArrowRight"){
+
+        nextBtn.click();
+
+    }
+
+    if(e.code === "ArrowLeft"){
+
+        prevBtn.click();
+
+    }
+
+});
+
+// Initialize first track
+loadTrack(currentTrack);
+
+currentTime.textContent = "00:00";
+
+duration.textContent = "00:00";
+
+progress.value = 0;
