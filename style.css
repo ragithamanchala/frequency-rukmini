@@ -1,225 +1,413 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* ===========================
+   GLOBAL
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-body {
-    font-family: 'Poppins', sans-serif;
-    background: linear-gradient(135deg,#fff8f3,#f7ebe3,#f3ddd4);
-    color: #3d3d3d;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 30px;
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    background:linear-gradient(135deg,#fff8f3,#f7ebe3,#f3ddd4);
+
+    color:#3d3d3d;
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:25px;
+
 }
 
-.hidden {
-    display: none;
+.hidden{
+
+    display:none !important;
+
 }
 
-/* ---------------- WELCOME ---------------- */
+/* ===========================
+   WELCOME
+=========================== */
 
-#welcome {
-    width: 100%;
-    max-width: 520px;
+#welcome{
+
+    width:100%;
+
+    display:flex;
+
+    justify-content:center;
+
 }
 
-.welcome-card {
-    background: rgba(255, 255, 255, 0.92);
-    backdrop-filter: blur(20px);
-    border-radius: 30px;
-    padding: 40px;
-    text-align: center;
-    box-shadow: 0 20px 50px rgba(0,0,0,.08);
-    animation: fadeUp 1s ease;
+.welcome-card{
+
+    width:100%;
+
+    max-width:500px;
+
+    background:rgba(255,255,255,.92);
+
+    backdrop-filter:blur(18px);
+
+    border-radius:30px;
+
+    padding:40px;
+
+    text-align:center;
+
+    box-shadow:0 25px 60px rgba(0,0,0,.08);
+
+    animation:fadeUp 1s ease;
+
 }
 
-#welcome h1 {
-    font-family: "Cormorant Garamond", serif;
-    font-size: 64px;
-    color: #43352f;
-    margin-bottom: 5px;
+#welcome h1{
+
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:64px;
+
+    color:#44352f;
+
 }
 
-.artist {
-    color: #8b817a;
-    font-size: 15px;
-    margin-bottom: 25px;
+.artist{
+
+    margin-top:5px;
+
+    color:#8f847d;
+
+    font-size:15px;
+
 }
+
+.home{
+
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:28px;
+
+    margin-bottom:15px;
+
+}
+
+.message{
+
+    margin-top:25px;
+
+    line-height:1.9;
+
+    color:#555;
+
+}
+
+.heart{
+
+    font-size:28px;
+
+    margin:18px 0;
+
+}
+
+.kit{
+
+    display:inline-block;
+
+    background:#fffaf7;
+
+    border:1px solid #ead8cf;
+
+    border-radius:18px;
+
+    padding:16px 24px;
+
+    margin-top:12px;
+
+    font-weight:600;
+
+}
+
+.kit span{
+
+    font-weight:400;
+
+    font-size:13px;
+
+    color:#888;
+
+}
+
+/* ===========================
+   COVER
+=========================== */
 
 #cover,
-#coverPlayer {
-    width: 100%;
-    max-width: 320px;
-    display: block;
-    margin: 0 auto 30px;
-    border-radius: 20px;
-    box-shadow: 0 12px 30px rgba(0,0,0,.15);
-    animation: float 5s ease-in-out infinite;
+#coverPlayer{
+
+    width:100%;
+
+    max-width:320px;
+
+    display:block;
+
+    margin:30px auto;
+
+    border-radius:22px;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.18);
+
+    animation:float 5s ease-in-out infinite;
+
 }
 
-.home {
-    font-family: "Cormorant Garamond", serif;
-    font-size: 28px;
-    margin-bottom: 15px;
-    color: #43352f;
+/* ===========================
+   BUTTON
+=========================== */
+
+#enterBtn{
+
+    margin-top:35px;
+
+    width:100%;
+
+    padding:16px;
+
+    border:none;
+
+    border-radius:40px;
+
+    background:#c98d7b;
+
+    color:white;
+
+    font-size:16px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
 }
 
-.message {
-    line-height: 1.9;
-    color: #555;
-    font-size: 15px;
+#enterBtn:hover{
+
+    transform:translateY(-3px);
+
+    background:#b77a68;
+
 }
 
-.heart {
-    font-size: 28px;
-    margin: 20px 0;
+/* ===========================
+   PLAYER
+=========================== */
+
+#player{
+
+    width:100%;
+
+    max-width:470px;
+
+    background:rgba(255,255,255,.92);
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.45);
+
+    border-radius:30px;
+
+    padding:30px;
+
+    box-shadow:0 25px 60px rgba(0,0,0,.08);
+
+    animation:fadeUp .8s;
+
 }
 
-.kit {
-    display: inline-block;
-    background: #fffaf7;
-    border: 1px solid #ead8cf;
-    border-radius: 16px;
-    padding: 15px 22px;
-    margin-top: 10px;
-    font-weight: 600;
+#player h2{
+
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:46px;
+
+    text-align:center;
+
 }
 
-.kit span {
-    font-size: 13px;
-    color: #777;
-    font-weight: 400;
+.subtitle{
+
+    text-align:center;
+
+    color:#9c918b;
+
+    font-size:14px;
+
+    line-height:1.6;
+
+    margin-top:6px;
+
+    margin-bottom:20px;
+
 }
 
-#enterBtn {
-    margin-top: 35px;
-    width: 100%;
-    padding: 16px;
-    border: none;
-    border-radius: 40px;
-    background: #c98d7b;
-    color: white;
-    font-size: 16px;
-    cursor: pointer;
-    transition: .3s;
+#trackTitle{
+
+    text-align:center;
+
+    margin:22px 0;
+
+    font-size:22px;
+
 }
 
-#enterBtn:hover {
-    background: #b87b69;
-    transform: scale(1.03);
+/* ===========================
+   PROGRESS
+=========================== */
+
+#progress{
+
+    width:100%;
+
+    cursor:pointer;
+
 }
 
-/* ---------------- PLAYER ---------------- */
+.time{
 
-#player {
-    width: 100%;
-    max-width: 470px;
-    background: rgba(255,255,255,.92);
-    backdrop-filter: blur(20px);
-    border-radius: 30px;
-    padding: 30px;
-    box-shadow: 0 20px 50px rgba(0,0,0,.08);
-    animation: fadeUp .8s ease;
-    border:1px solid rgba(255,255,255,.4);
+    margin-top:8px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    color:#777;
+
+    font-size:13px;
+
 }
 
-#player h2 {
-    text-align: center;
-    font-family: "Cormorant Garamond", serif;
-    font-size: 46px;
-    margin-bottom: 5px;
+/* ===========================
+   CONTROLS
+=========================== */
+
+.controls{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:20px;
+
+    margin:30px 0;
+
 }
 
-#trackTitle {
-    text-align: center;
-    font-size: 22px;
-    margin: 20px 0;
+.controls button{
+
+    width:60px;
+
+    height:60px;
+
+    border-radius:50%;
+
+    border:none;
+
+    cursor:pointer;
+
+    font-size:22px;
+
+    background:#f4ece7;
+
+    transition:.25s;
+
 }
 
-#progress {
-    width: 100%;
-    margin: 15px 0;
-    cursor: pointer;
+.controls button:hover{
+
+    transform:scale(1.08);
+
 }
 
-.time {
-    display: flex;
-    justify-content: space-between;
-    font-size: 13px;
-    color: #777;
+#play{
+
+    background:#c98d7b;
+
+    color:white;
+
 }
 
-.controls {
-    display: flex;
-    justify-content: center;
-    gap: 18px;
-    margin: 30px 0;
+/* ===========================
+   PLAYLIST
+=========================== */
+
+#playlist{
+
+    margin-top:20px;
+
+    max-height:300px;
+
+    overflow-y:auto;
+
+    padding-right:6px;
+
 }
 
-.controls button {
-    width: 58px;
-    height: 58px;
-    border-radius: 50%;
-    border: none;
-    cursor: pointer;
-    font-size: 22px;
-    background: #f5ede9;
-    transition: .25s;
+.track{
+
+    background:#faf7f5;
+
+    border-radius:14px;
+
+    padding:14px 18px;
+
+    margin-bottom:10px;
+
+    cursor:pointer;
+
+    transition:.25s;
+
 }
 
-.controls button:hover {
-    transform: scale(1.08);
-}
+.track:hover{
 
-#play {
-    background: #c98d7b;
-    color: white;
-}
+    background:#f3e6de;
 
-/* ---------------- PLAYLIST ---------------- */
-
-#playlist {
-    margin-top: 20px;
-    max-height: 300px;
-    overflow-y: auto;
-    padding-right: 6px;
-}
-
-.track {
-    padding: 14px 16px;
-    border-radius: 14px;
-    margin-bottom: 10px;
-    cursor: pointer;
-    transition: .25s;
-    background: #faf7f5;
-}
-
-.track:hover {
-    background: #f1e4dd;
 }
 
 .track.active{
 
     background:#ead8cf;
+
     border-left:5px solid #c98d7b;
+
     font-weight:600;
-    color:#7a4e42;
+
+    color:#76483d;
+
 }
 
 .track-row{
+
     display:flex;
+
     align-items:center;
+
     gap:18px;
+
 }
 
 .track-number{
 
-    width:30px;
+    width:32px;
 
-    color:#a39b95;
+    color:#9f968f;
 
     font-size:14px;
 
@@ -229,62 +417,145 @@ body {
 
     flex:1;
 
-    font-size:15px;
+}
+
+#playlist::-webkit-scrollbar{
+
+    width:6px;
 
 }
 
-#playlist::-webkit-scrollbar {
-    width: 6px;
+#playlist::-webkit-scrollbar-thumb{
+
+    background:#d8b5a7;
+
+    border-radius:10px;
+
 }
 
-#playlist::-webkit-scrollbar-thumb {
-    background: #d7b5a8;
-    border-radius: 10px;
+/* ===========================
+   ENDING SCREEN
+=========================== */
+
+#endingScreen{
+
+    position:fixed;
+
+    inset:0;
+
+    background:linear-gradient(135deg,#fff8f3,#f5e8df);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:999;
+
 }
-.subtitle{
+
+.ending-card{
 
     text-align:center;
 
-    color:#9d928c;
+    animation:fadeUp 1s;
 
-    margin-top:-5px;
+}
+
+.ending-card h1{
+
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:64px;
 
     margin-bottom:20px;
 
-    font-size:14px;
+}
 
-    line-height:1.6;
+.ending-card p{
+
+    line-height:1.9;
+
+    color:#666;
 
 }
 
-/* ---------------- ANIMATIONS ---------------- */
+/* ===========================
+   ANIMATIONS
+=========================== */
 
-@keyframes float {
+@keyframes float{
 
-    0% {
-        transform: translateY(0);
+    0%{
+
+        transform:translateY(0);
+
     }
 
-    50% {
-        transform: translateY(-8px);
+    50%{
+
+        transform:translateY(-8px);
+
     }
 
-    100% {
-        transform: translateY(0);
+    100%{
+
+        transform:translateY(0);
+
     }
 
 }
 
-@keyframes fadeUp {
+@keyframes fadeUp{
 
-    from {
-        opacity: 0;
-        transform: translateY(40px);
+    from{
+
+        opacity:0;
+
+        transform:translateY(35px);
+
     }
 
-    to {
-        opacity: 1;
-        transform: translateY(0);
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* ===========================
+   MOBILE
+=========================== */
+
+@media(max-width:600px){
+
+    .welcome-card,
+    #player{
+
+        padding:24px;
+
+    }
+
+    #welcome h1{
+
+        font-size:48px;
+
+    }
+
+    #player h2{
+
+        font-size:38px;
+
+    }
+
+    .home{
+
+        font-size:24px;
+
     }
 
 }
