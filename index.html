@@ -1,1 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frequency: Rukmini</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Cormorant+Garamond:wght@400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<div id="welcome">
+
+    <h3>frequency:</h3>
+
+    <h1>rukmini</h1>
+
+    <p>
+        For my Bear.
+        <br><br>
+        Whenever you need me,
+        <br>
+        I'll always be one play away.
+    </p>
+
+    <button id="enterBtn">
+        Press Play
+    </button>
+
+</div>
+
+
+
+<div id="player" class="hidden">
+
+    <img id="cover" src="images/cover.jpg">
+
+    <h2>Frequency: Rukmini</h2>
+
+    <p class="artist">
+        by Ragitha
+    </p>
+
+
+
+    <audio id="audioPlayer"></audio>
+
+
+
+    <div class="nowPlaying">
+
+        <h3 id="trackTitle">
+            Helloooo
+        </h3>
+
+    </div>
+
+
+
+    <input
+        type="range"
+        id="progress"
+        value="0"
+        min="0"
+        max="100">
+
+
+
+    <div class="time">
+
+        <span id="currentTime">
+            0:00
+        </span>
+
+        <span id="duration">
+            0:00
+        </span>
+
+    </div>
+
+
+
+    <div class="controls">
+
+        <button id="prev">
+            ⏮
+        </button>
+
+        <button id="play">
+            ▶
+        </button>
+
+        <button id="next">
+            ⏭
+        </button>
+
+    </div>
+
+
+
+    <div id="playlist">
+
+    </div>
+
+</div>
+
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
