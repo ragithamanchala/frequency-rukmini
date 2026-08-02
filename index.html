@@ -2,90 +2,202 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Echo Chambers</title>
 
     <link rel="stylesheet" href="style.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Cormorant+Garamond:wght@400;600&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
 
-<div id="welcome">
+    <!-- ================= WELCOME SCREEN ================= -->
 
-    <div class="welcome-card">
+    <section id="welcome">
 
-        <h1>Echo Chambers</h1>
+        <div class="welcome-card">
 
-        <p class="artist">by Ragitha</p>
+            <h1>Echo Chambers</h1>
 
-        <img id="cover" src="images/cover.jpeg" alt="Album Cover">
-
-        <div class="message">
-
-            <p class="home">Home isn't a place.</p>
-
-            <p>
-                For the days you miss me,<br>
-                the days you don't,<br>
-                and every day in between.
+            <p class="artist">
+                by Ragitha
             </p>
 
-            <div class="heart">🤍</div>
+            <img
+                id="cover"
+                src="images/cover.jpeg"
+                alt="Echo Chambers Album Cover">
 
-            <div class="kit">
-                Emergency Best Friend Kit<br>
-                <span>Use whenever required.</span>
+            <div class="message">
+
+                <p class="home">
+                    Home isn't a place.
+                </p>
+
+                <p>
+                    For the days you miss me,<br>
+                    the days you don't,<br>
+                    and every day in between.
+                </p>
+
+                <div class="heart">
+                    🤍
+                </div>
+
+                <div class="kit">
+
+                    Emergency Best Friend Kit
+
+                    <br>
+
+                    <span>
+                        Use whenever required.
+                    </span>
+
+                </div>
+
+            </div>
+
+            <button id="enterBtn">
+
+                Open the album
+
+            </button>
+
+        </div>
+
+    </section>
+
+
+
+
+
+    <!-- ================= MUSIC PLAYER ================= -->
+
+    <section id="player" class="hidden">
+
+        <h2>
+            Echo Chambers
+        </h2>
+
+        <p class="artist">
+            by Ragitha
+        </p>
+
+        <p class="subtitle">
+            A collection of conversations,<br>
+            for whenever you need one.
+        </p>
+
+        <img
+            id="coverPlayer"
+            src="images/cover.jpeg"
+            alt="Album Cover">
+
+        <h3 id="trackTitle">
+            Helloooo
+        </h3>
+
+        <audio id="audioPlayer"></audio>
+
+        <input
+            type="range"
+            id="progress"
+            value="0"
+            min="0"
+            max="100">
+
+        <div class="time">
+
+            <span id="currentTime">
+                00:00
+            </span>
+
+            <span id="duration">
+                00:00
+            </span>
+
+        </div>
+
+        <div class="controls">
+
+            <button id="prev">
+
+                ⏮
+
+            </button>
+
+            <button id="play">
+
+                ▶
+
+            </button>
+
+            <button id="next">
+
+                ⏭
+
+            </button>
+
+        </div>
+
+        <div id="playlist">
+
+            <!-- Playlist generated automatically -->
+
+        </div>
+
+    </section>
+
+
+
+
+
+    <!-- ================= HIDDEN TRACK SCREEN ================= -->
+
+    <section id="endingScreen" class="hidden">
+
+        <div class="ending-card">
+
+            <h1>
+
+                You made it.
+
+            </h1>
+
+            <p>
+
+                There was one last thing
+                I wanted you to hear.
+
+            </p>
+
+            <div class="heart">
+
+                🤍
+
             </div>
 
         </div>
 
-        <button id="enterBtn">Open the album</button>
-
-    </div>
-
-</div>
+    </section>
 
 
 
-    <div id="player" class="hidden">
 
-        <h2>Echo Chambers</h2>
-
-<p class="subtitle">
-A collection of conversations,
-for whenever you need one.
-</p>
-
-        <p class="artist">by Ragitha</p>
-
-        <img id="coverPlayer" src="images/cover.jpeg" alt="Album Cover">
-
-        <h3 id="trackTitle">Helloooo</h3>
-
-        <audio id="audioPlayer"></audio>
-
-        <input type="range" id="progress" value="0" min="0" max="100">
-
-        <div class="time">
-            <span id="currentTime">0:00</span>
-            <span id="duration">0:00</span>
-        </div>
-
-        <div class="controls">
-            <button id="prev">⏮</button>
-            <button id="play">▶</button>
-            <button id="next">⏭</button>
-        </div>
-
-        <div id="playlist"></div>
-
-    </div>
 
     <script src="script.js"></script>
 
 </body>
+
 </html>
