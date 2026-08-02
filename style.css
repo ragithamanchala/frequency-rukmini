@@ -19,56 +19,85 @@ body {
     display: none;
 }
 
-/* ---------- Welcome Screen ---------- */
+/* ---------------- WELCOME ---------------- */
 
 #welcome {
-    max-width: 500px;
     width: 100%;
-    background: white;
+    max-width: 520px;
+}
+
+.welcome-card {
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(20px);
     border-radius: 30px;
-    padding: 35px;
+    padding: 40px;
     text-align: center;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.08);
-    animation: fade 1s ease;
+    box-shadow: 0 20px 50px rgba(0,0,0,.08);
+    animation: fadeUp 1s ease;
 }
 
 #welcome h1 {
     font-family: "Cormorant Garamond", serif;
-    font-size: 60px;
-    color: #4b3f39;
+    font-size: 64px;
+    color: #43352f;
+    margin-bottom: 5px;
 }
 
 .artist {
     color: #8b817a;
-    margin-top: 5px;
-    margin-bottom: 20px;
     font-size: 15px;
+    margin-bottom: 25px;
 }
 
 #cover,
 #coverPlayer {
     width: 100%;
     max-width: 320px;
-    border-radius: 20px;
     display: block;
-    margin: 25px auto;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+    margin: 0 auto 30px;
+    border-radius: 20px;
+    box-shadow: 0 12px 30px rgba(0,0,0,.15);
+    animation: float 5s ease-in-out infinite;
+}
+
+.home {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 28px;
+    margin-bottom: 15px;
+    color: #43352f;
 }
 
 .message {
     line-height: 1.9;
     color: #555;
-    margin: 25px 0;
     font-size: 15px;
 }
 
-.message strong {
-    color: #3d3d3d;
+.heart {
+    font-size: 28px;
+    margin: 20px 0;
+}
+
+.kit {
+    display: inline-block;
+    background: #fffaf7;
+    border: 1px solid #ead8cf;
+    border-radius: 16px;
+    padding: 15px 22px;
+    margin-top: 10px;
+    font-weight: 600;
+}
+
+.kit span {
+    font-size: 13px;
+    color: #777;
+    font-weight: 400;
 }
 
 #enterBtn {
-    margin-top: 20px;
-    padding: 15px 35px;
+    margin-top: 35px;
+    width: 100%;
+    padding: 16px;
     border: none;
     border-radius: 40px;
     background: #c98d7b;
@@ -79,32 +108,34 @@ body {
 }
 
 #enterBtn:hover {
-    transform: scale(1.05);
-    background: #b77a67;
+    background: #b87b69;
+    transform: scale(1.03);
 }
 
-/* ---------- Player ---------- */
+/* ---------------- PLAYER ---------------- */
 
 #player {
     width: 100%;
-    max-width: 450px;
-    background: white;
+    max-width: 470px;
+    background: rgba(255,255,255,.92);
+    backdrop-filter: blur(20px);
     border-radius: 30px;
     padding: 30px;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.08);
-    animation: fade 1s ease;
+    box-shadow: 0 20px 50px rgba(0,0,0,.08);
+    animation: fadeUp .8s ease;
 }
 
 #player h2 {
-    font-family: "Cormorant Garamond", serif;
     text-align: center;
-    font-size: 42px;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 46px;
+    margin-bottom: 5px;
 }
 
 #trackTitle {
     text-align: center;
-    margin: 20px 0;
     font-size: 22px;
+    margin: 20px 0;
 }
 
 #progress {
@@ -116,14 +147,14 @@ body {
 .time {
     display: flex;
     justify-content: space-between;
-    color: #888;
     font-size: 13px;
+    color: #777;
 }
 
 .controls {
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 18px;
     margin: 30px 0;
 }
 
@@ -132,10 +163,10 @@ body {
     height: 58px;
     border-radius: 50%;
     border: none;
-    background: #f3ece7;
     cursor: pointer;
     font-size: 22px;
-    transition: .3s;
+    background: #f5ede9;
+    transition: .25s;
 }
 
 .controls button:hover {
@@ -147,17 +178,22 @@ body {
     color: white;
 }
 
+/* ---------------- PLAYLIST ---------------- */
+
 #playlist {
     margin-top: 20px;
+    max-height: 300px;
+    overflow-y: auto;
+    padding-right: 6px;
 }
 
 .track {
-    padding: 15px;
+    padding: 14px 16px;
     border-radius: 14px;
     margin-bottom: 10px;
-    background: #faf7f5;
     cursor: pointer;
     transition: .25s;
+    background: #faf7f5;
 }
 
 .track:hover {
@@ -165,17 +201,9 @@ body {
 }
 
 .track.active {
-    background: #e9d6cd;
+    background: #ead8cf;
+    color: #7a4e42;
     font-weight: 600;
-    color: #7b4c3f;
-}
-
-/* ---------- Scroll ---------- */
-
-#playlist {
-    max-height: 300px;
-    overflow-y: auto;
-    padding-right: 5px;
 }
 
 #playlist::-webkit-scrollbar {
@@ -187,13 +215,29 @@ body {
     border-radius: 10px;
 }
 
-/* ---------- Animation ---------- */
+/* ---------------- ANIMATIONS ---------------- */
 
-@keyframes fade {
+@keyframes float {
+
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+
+}
+
+@keyframes fadeUp {
 
     from {
         opacity: 0;
-        transform: translateY(20px);
+        transform: translateY(40px);
     }
 
     to {
